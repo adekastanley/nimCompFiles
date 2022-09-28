@@ -5,6 +5,7 @@ import { View, Text, StyleSheet, ViewStyle } from 'react-native';
 // import PrimaryButtonGreen from './buttons/primaryButtonGreen';
 // import { PrimaryButton, PrimaryButtonBlack, PrimaryButtonGreen, PrimaryRoundedButtonGreen } from './buttons/button';
 // import LoginComp from './signUp/loginComp';
+import BottomNavigation from './bottomNavigation';
 
 
 // this was made foim portr testing purposes
@@ -16,7 +17,7 @@ export default function Header() {
             <PrimaryButton title='helllo' />
             <PrimaryButtonGreen title='hello' />
             <PrimaryRoundedButtonGreen title='hello' /> */}
-
+            {/* <BottomNavigation /> */}
 
         </View>
     );

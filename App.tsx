@@ -25,7 +25,7 @@ const App = () => {
     //   title="Seek Medical Care"
     //   note="Explore our diverse array of certified medical professionals. Interact live and get on-time solutions to your healthcare needs."
     //   imagePath={undefined}    // imagePath='./asserts/slider1.png'
-    // />
+    // /> 
     // <LoginComp />
     // <PrimaryButton title={"sign up"} />
     // <SignUoOPtions />

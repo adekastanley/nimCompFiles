@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import React from 'react';
+import BottomNavigation from '../bottomNavigation';
 
 export default function HomeScreen() {
     return (
@@ -69,6 +70,43 @@ export default function HomeScreen() {
                     </View>
                     {/* this container houses the vitals */}
                     <View style={styles.vitalsContainer}>
+                        <View style={styles.vitalsContainerTop} >
+                            <Text style={styles.vitalsContainerTopText}>Your Vitals!</Text>
+                            <TouchableOpacity style={styles.vitalsContainerTopButton}>
+                                <Image style={styles.vitalsContainerTopButtonIcon} source={require('../asserts/icons/plus.png')} />
+                                <Text>Update</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.vitalsContainerBottom}>
+                            <View style={styles.vitalsContainerBottomVitals}>
+
+                                <View style={styles.vitalsContainerBottomVitalsWrapper}>
+                                    <View style={styles.vitalsContainerBottomVitalsCards}>
+                                        <Text style={styles.vitalsContainerBottomVitalsCardsData}>{`${100}bpm`}</Text>
+                                        <Text style={styles.vitalsContainerBottomVitalsCardsTitle}>Pulse Rate</Text>
+                                    </View>
+                                    <View style={styles.vitalsContainerBottomVitalsCards}>
+                                        <Text style={styles.vitalsContainerBottomVitalsCardsData}>{`${'97 / 65'}`}</Text>
+                                        <Text style={styles.vitalsContainerBottomVitalsCardsTitle}>B/P mmHg</Text>
+                                    </View>
+                                </View>
+                                <View style={styles.vitalsContainerBottomVitalsWrapper}>
+                                    <View style={styles.vitalsContainerBottomVitalsCards}>
+                                        <Text style={styles.vitalsContainerBottomVitalsCardsData}>{`${140}mg/ dL`}</Text>
+                                        <Text style={styles.vitalsContainerBottomVitalsCardsTitle}>Blood Sugar</Text>
+                                    </View>
+                                    <View style={styles.vitalsContainerBottomVitalsCards}>
+                                        <Text style={styles.vitalsContainerBottomVitalsCardsData}>{`${98.6} F`}</Text>
+                                        <Text style={styles.vitalsContainerBottomVitalsCardsTitle}>Body Temp</Text>
+                                    </View>
+                                </View>
+
+
+                            </View>
+                            <View style={styles.vitalsContainerBottomChart}>
+
+                            </View>
+                        </View>
 
                     </View>
 
@@ -79,13 +117,67 @@ export default function HomeScreen() {
             {/* top navigation styles end here */}
 
 
-            <View style={styles.bottom}>
+            <ScrollView style={styles.bottom}>
+                <View style={styles.vaccinePassportWrapper}>
 
-            </View>
+                    <TouchableOpacity style={styles.vaccinePassport}>
+                        <Image style={styles.vaccineImage} source={require('../asserts/images/vaccine.png')} />
+                        <Text style={styles.vaccineText}> Vaccine Passport</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.servicesContainer}>
+                    <View style={styles.servicesContainerWrapper}>
+                        <TouchableOpacity style={styles.servicesContainerCards}>
+                            <View style={styles.servicesContainerCardsImagesContainer}>
+                                <Image style={styles.servicesContainerCardsImage} source={require('../asserts/images/ambulance.png')} />
+                            </View>
+                            <View style={styles.servicesContainerCardsTitleContainer}>
+                                <Text style={styles.servicesContainerCardsTitleText}> Ambulance</Text>
+                            </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.servicesContainerCards}>
+                            <View style={styles.servicesContainerCardsImagesContainer}>
+                                <Image style={styles.servicesContainerCardsImage} source={require('../asserts/images/emergency.png')} />
+                            </View>
+                            <View style={styles.servicesContainerCardsTitleContainer}>
+                                <Text style={styles.servicesContainerCardsTitleText}>Emergency Services</Text>
+                            </View>
+                        </TouchableOpacity></View>
+
+                    <View style={styles.servicesContainerWrapper}>
+                        <TouchableOpacity style={styles.servicesContainerCards}>
+                            <View style={styles.servicesContainerCardsImagesContainer}>
+                                <Image style={styles.servicesContainerCardsImage} source={require('../asserts/images/doctor.png')} />
+                            </View>
+                            <View style={styles.servicesContainerCardsTitleContainer}>
+                                <Text style={styles.servicesContainerCardsTitleText}> Healthcare</Text>
+                            </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.servicesContainerCards}>
+                            <View style={styles.servicesContainerCardsImagesContainer}>
+                                <Image style={styles.servicesContainerCardsImage} source={require('../asserts/images/ambulance.png')} />
+                            </View>
+                            <View style={styles.servicesContainerCardsTitleContainer}>
+                                <Text style={styles.servicesContainerCardsTitleText}>Pharmacy</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+
+
+
+
+
+
+                </View>
+
+            </ScrollView>
 
 
             <View style={styles.navigation}>
-
+                <BottomNavigation />
             </View>
         </View>
     )
@@ -100,6 +192,7 @@ const styles = StyleSheet.create({
     topOuter: {
         backgroundColor: '#06430D',
         height: '42%',
+
     },
     topInner: {
 
@@ -273,9 +366,83 @@ const styles = StyleSheet.create({
         marginTop: 20,
         width: '90%',
         height: 170,
-        backgroundColor: 'red',
-        borderRadius: 7
+        backgroundColor: '#C5DFDC',
+        borderRadius: 9,
+        padding: 5,
     },
+
+    vitalsContainerTop: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 3
+    },
+    vitalsContainerTopText: {
+        marginLeft: 13,
+        fontWeight: 'bold',
+        fontSize: 12,
+        color: '#06430D',
+    },
+    vitalsContainerTopButton: {
+        fontSize: 12,
+        marginRight: 13,
+        borderWidth: 1,
+        backgroundColor: '#FFFFFF',
+        width: 70,
+        alignItems: 'center',
+        height: 23,
+        borderRadius: 10,
+        borderColor: '#0000001A',
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+    },
+    vitalsContainerTopButtonIcon: {
+        width: 10,
+        height: 10
+    },
+    vitalsContainerBottom: {
+        // backgroundColor: 'red',
+        height: 130,
+        width: '100%',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around'
+    },
+    vitalsContainerBottomVitals: {
+        height: 120,
+        width: '45%',
+        justifyContent: 'space-between'
+
+    },
+    vitalsContainerBottomVitalsWrapper: {
+        flexDirection: 'row',
+        height: '45%',
+        padding: 1,
+        justifyContent: 'space-between',
+
+    },
+    vitalsContainerBottomVitalsCards: {
+        width: '45%',
+        // height: '25%',
+        backgroundColor: '#FAFAFA',
+        alignItems: 'center',
+        borderRadius: 10,
+        justifyContent: 'center'
+
+
+    },
+    vitalsContainerBottomChart: {
+        backgroundColor: 'green',
+        height: 120,
+        width: '45%'
+    },
+    vitalsContainerBottomVitalsCardsData: {
+        fontSize: 12,
+        fontWeight: 'bold'
+    },
+    vitalsContainerBottomVitalsCardsTitle: {
+        fontSize: 10,
+    },
+
     // location: {
 
     // },
@@ -288,17 +455,90 @@ const styles = StyleSheet.create({
     bottom: {
         backgroundColor: '#F5F5F5',
         height: '50%',
-        zIndex: -1
+        zIndex: -1,
 
-
+        marginTop: 60,
 
 
     },
+    vaccinePassportWrapper: {
+        width: '100%',
+        alignItems: 'center'
+    },
+    vaccinePassport: {
+        height: 100,
+        width: '90%',
+        backgroundColor: '#FFC107',
+        borderRadius: 15,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    vaccineImage: {
+        height: 80,
+        width: 120
+    },
+    vaccineText: {
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
+
+    servicesContainer: {
+        backgroundColor: '#F5F5F5',
+        marginVertical: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
+
+    },
+    servicesContainerWrapper: {
+        flexDirection: 'row'
+    },
+    servicesContainerCards: {
+        height: 120,
+        width: 180,
+        // backgroundColor: 'red',
+        // margin: 10
+        marginVertical: 10
+    },
+
+    servicesContainerCardsImagesContainer: {
+        alignItems: 'center'
+    },
+    servicesContainerCardsTitleContainer: {
+        height: 40,
+        bottom: 15,
+        zIndex: 1,
+        position: 'relative',
+        backgroundColor: 'rgba(255, 255, 255, .8)',
+
+
+    },
+    servicesContainerCardsImage: {
+        width: 170,
+        height: 100,
+
+
+    },
+    servicesContainerCardsTitleText: {
+        color: '#FF0615',
+        textAlign: 'center',
+        paddingTop: 20,
+        fontWeight: 'bold',
+
+
+    },
+
+
+
+
+
     navigation: {
+        // flex: 1,
         backgroundColor: 'white',
-        height: '8%',
-        marginTop: 'auto'
-    }
+        height: '6%',
+        marginTop: 'auto',
+        justifyContent: 'center'
+    },
+
 })
 
 
