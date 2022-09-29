@@ -527,10 +527,6 @@ const styles = StyleSheet.create({
 
     },
 
-
-
-
-
     navigation: {
         // flex: 1,
         backgroundColor: 'white',
@@ -538,7 +534,6 @@ const styles = StyleSheet.create({
         marginTop: 'auto',
         justifyContent: 'center'
     },
-
 })
 
 
