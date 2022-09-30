@@ -17,6 +17,8 @@ import ProSignUp from './components/signUp/proSignUp';
 import Header from './components/header';
 import NearWalletSuccessful from './components/signUp/nearWalletSuccessfull';
 import HomeScreen from './components/screens/homeScreen';
+import HealthcareScreen from './components/screens/cardScreens/healthCare';
+import Pharmacy from './components/screens/cardScreens/pharmacy';
 
 const App = () => {
 
@@ -32,7 +34,9 @@ const App = () => {
     // <ProSignUp />
     // <Header />
     // <NearWalletSuccessful />
-    <HomeScreen />
+    // <HomeScreen />
+    // <HealthcareScreen />
+    <Pharmacy />
 
   );
 };
