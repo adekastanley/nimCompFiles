@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Pressable } from 'react-native';
 import React from 'react';
 import BottomNavigation from '../bottomNavigation';
 
@@ -164,6 +164,29 @@ export default function HomeScreen() {
                                 <Text style={styles.servicesContainerCardsTitleText}>Pharmacy</Text>
                             </View>
                         </TouchableOpacity>
+                    </View>
+
+                    <TouchableOpacity style={styles.medicalRecordsContainer}>
+                        <View style={styles.medicalRecordsImageContainer}>
+                            <Image style={styles.medicalRecordsImage} source={require('../asserts/images/medrecords.png')} />
+                        </View>
+                        <View style={styles.medicalRecordsTextContainer}>
+                            <Text style={styles.medicalRecordsTextTitle}> Uplaod your Medical Record </Text>
+                            <Text style={styles.medicalRecordsTextNote}> Analyze using our AI, Send to a Doctor or store for later </Text>
+                        </View>
+                    </TouchableOpacity>
+
+
+                    <View style={styles.pandemicContainer}>
+                        <View style={styles.pandemicImageContainer}>
+                            <Image style={styles.pandemicImage} source={require('../asserts/images/cartoondoctor.png')} />
+                        </View>
+                        <View style={styles.pandemicTextContainer}>
+                            <Text style={styles.pandemicTextTitle}> Stay healthy in the midst of a pandemic </Text>
+                            <TouchableOpacity style={styles.pandemicTextButtom}>
+                                <Text style={styles.pandemicTextButtomText}>Learn More</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
 
 
@@ -490,18 +513,21 @@ const styles = StyleSheet.create({
 
     },
     servicesContainerWrapper: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+
     },
     servicesContainerCards: {
         height: 120,
         width: 180,
         // backgroundColor: 'red',
         // margin: 10
-        marginVertical: 10
+        marginVertical: 10,
+
     },
 
     servicesContainerCardsImagesContainer: {
-        alignItems: 'center'
+        alignItems: 'center',
+
     },
     servicesContainerCardsTitleContainer: {
         height: 40,
@@ -515,6 +541,8 @@ const styles = StyleSheet.create({
     servicesContainerCardsImage: {
         width: 170,
         height: 100,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
 
 
     },
@@ -527,6 +555,80 @@ const styles = StyleSheet.create({
 
     },
 
+
+    // remember to remake this to remove duplicate code... this and vaccine are the same 
+    medicalRecordsContainer: {
+        width: '95%',
+        height: 100,
+        justifyContent: 'center',
+        backgroundColor: 'rgba(6, 67, 13, 0.05)',
+        flexDirection: 'row',
+        marginVertical: 10,
+        borderRadius: 20,
+        alignItems: 'center'
+
+    },
+    medicalRecordsImageContainer: {
+
+    },
+    medicalRecordsImage: {
+        height: 80,
+        width: 80
+    },
+    medicalRecordsTextContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
+    medicalRecordsTextTitle: {
+        fontWeight: 'bold'
+    },
+    medicalRecordsTextNote: {
+        fontSize: 10,
+        fontWeight: 'bold',
+
+        width: 200,
+        // textAlign: ''
+    },
+
+    pandemicContainer: {
+        width: '95%',
+        backgroundColor: '#C5DFDC',
+        height: 130,
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 20,
+        marginBottom: 40
+
+    },
+    pandemicImageContainer: {
+    },
+    pandemicImage: {
+        height: 100,
+        width: 70
+    },
+    pandemicTextContainer: {
+        marginHorizontal: 20
+    },
+    pandemicTextTitle: {
+        fontWeight: 'bold',
+        width: 180,
+        marginVertical: 3,
+        lineHeight: 20
+    },
+    pandemicTextButtom: {
+        borderRadius: 30,
+        backgroundColor: 'white',
+        width: 90,
+        height: 30,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    pandemicTextButtomText: {
+        fontSize: 12,
+        fontWeight: 'bold'
+    },
+
     navigation: {
         // flex: 1,
         backgroundColor: 'white',
@@ -534,6 +636,9 @@ const styles = StyleSheet.create({
         marginTop: 'auto',
         justifyContent: 'center'
     },
+
+
+
 })
 
 
